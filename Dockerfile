@@ -5,7 +5,7 @@ WORKDIR /go/src/github.com/jakebjorke/shipper-consignment-cli
 COPY . .
 
 RUN go get
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo . 
+RUN CGO_ENABLED=0 GOOS=linux go build -o consignment-cli -a -installsuffix cgo . 
 
 FROM alpine:latest
 
